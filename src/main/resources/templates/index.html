@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+<title>Ninja Gold Game</title>
+</head>
+<body>
+	<h3 th:text="|Your Gold ${session.suma}|"></h3>
+	
+	<div class="d-flex flex-row gap-5 container m-3 mt-5">
+		<div class="card text-center" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">Farm</h5>
+				<p class="card-text">(earn 10 - 20 gold)</p>
+				<form action="Gold" method="post">
+					<input type="hidden" name="oro" value="1">
+					<button type="submit" class="btn btn-primary">Find Gold!!</button>
+				</form>
+			</div>
+		</div>
+		<div class="card text-center" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">Cave</h5>
+				<p class="card-text">(earn 5 - 10 gold)</p>
+				<form action="Gold" method="post">
+					<input type="hidden" name="oro" value="2">
+					<button type="submit" class="btn btn-primary">Find Gold!!</button>
+				</form>
+			</div>
+		</div>
+		<div class="card text-center" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">House</h5>
+				<p class="card-text">(earn 2 - 5 gold)</p>
+				<form action="Gold" method="post">
+					<input type="hidden" name="oro" value="3">
+					<button type="submit" class="btn btn-primary">Find Gold!!</button>
+				</form>
+			</div>
+		</div>
+		<div class="card text-center" style="width: 18rem;">
+			<div class="card-body">
+				<h5 class="card-title">Casino</h5>
+				<p class="card-text">(earns/takes 0 - 50 gold)</p>
+				<form action="Gold" method="post">
+					<input type="hidden" name="oro" value="4">
+					<button type="submit" class="btn btn-primary">Find Gold!!</button>
+				</form>
+			</div>
+		</div>
+	</div>	
+
+		<h4>Activities: </h4>		
+		<div class="m-3" style="height: 200px;  overflow-y: scroll; border:1px solid;" >
+			<p th:each="registro:${session.lista}" th:utext="${registro}" />
+		</div>	
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
